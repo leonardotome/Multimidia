@@ -5,6 +5,7 @@ body {
   padding: 0;
   font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: black;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -86,7 +87,7 @@ body {
   color: #fff;
 }
 
-.botao button{
+.botao button {
   background-color: #1B6BB3;
   border: none;
   width: 320px;
@@ -95,41 +96,67 @@ body {
   color: #fff;
 }
 
-.botao p{
+.botao p {
   font-size: 56px;
   margin-top: 40px;
   font-family: 'Concert One', cursive;
 }
 
 .galery .fotos .img {
-  width: 19.9%;
+  width: 20%;
   /* largura de cada imagem */
 }
 
-.img img{
+.img img {
   width: 100%;
 }
 
 hr {
   margin: 0;
   border-bottom: 3px solid #fff;
-
 }
 
 .servir {
-  background-color: #1b3062;
+  background-color: #1B6BB3;
   color: #fff;
-  font-size: 20px;
+  font-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: auto;
-  height: 30vh;
+  height: 50vh;
+}
+
+.servir h1 {
+  display: flex;
+  width: 90vh;
+  text-align: center;
+}
+
+.servir p{
+  width: 70vh;
+  font-size: 3vh;
+  text-align: center;
+  margin-top: 5vh;
 }
 
 .servir .btn {
   width: 20vh;
-  height: 1vw;
+  height: 3vw;
+  font-size: 17px;
+  margin-top: 7vh;
+  border-color: black;
+  border-radius: 5px;
+  border-width: 3px;
 }
 
+
+
+
+/* footer{
+  height: 10vh;
+  width: 100%;
+  background-color: black;
+  border-top: 3px solid #fff;
+} */
