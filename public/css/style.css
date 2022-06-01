@@ -20,6 +20,8 @@ body {
 }
 
 .header {
+  width: 100%;
+  background-color: black;
   border-bottom: 3px solid gray;
 }
 
@@ -38,12 +40,12 @@ body {
   align-items: center;
   justify-content: space-evenly;
   list-style: none;
+  font-size: 18px;
 }
 
 .btn_cadastro {
   cursor: pointer;
 }
-
 
 .img {
   width: auto;
@@ -108,8 +110,10 @@ body {
   width: 100%;
 }
 
-.hr {
+hr {
   margin: 0;
+  border-bottom: 3px solid #fff;
+
 }
 
 .servir {
