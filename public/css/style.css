@@ -7,7 +7,7 @@ body {
   background-color: black;
 }
 
-.logo{
+.logo {
   width: 160px;
 }
 
@@ -38,6 +38,43 @@ body {
   list-style: none;
 }
 
-.btn_cadastro{
+.btn_cadastro {
   cursor: pointer;
+}
+
+img{
+  width: auto; 
+  max-height: 100%; 
+
+}
+
+.fotos{
+  height:700px;
+}
+
+.galery {
+  width: 100%;
+  height: 800px;
+  object-fit:contain;
+  overflow: hidden;
+}
+
+.galery .fotos {
+  width: 500%;
+  animation-name: animacao;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  position: relative;
+}
+
+.galery .fotos img {
+  
+  width: 19.9%;
+  /* largura de cada imagem */
+}
+
+.fotos .btn{
+  display: flex;
+  margin-bottom: 20px;
+  position: absolute;
 }
