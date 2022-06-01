@@ -15,6 +15,8 @@ body {
   width: 100%;
   margin: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -42,39 +44,88 @@ body {
   cursor: pointer;
 }
 
-img{
-  width: auto; 
-  max-height: 100%; 
 
+.img {
+  width: auto;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.fotos{
-  height:700px;
+.fotos {
+  height: 700px;
 }
 
 .galery {
   width: 100%;
-  height: 800px;
-  object-fit:contain;
+  height: 700px;
+  object-fit: contain;
   overflow: hidden;
 }
 
 .galery .fotos {
   width: 500%;
+  display: flex;
   animation-name: animacao;
   animation-duration: 20s;
   animation-iteration-count: infinite;
-  position: relative;
 }
 
-.galery .fotos img {
-  
+.botao {
+  position: absolute;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 800px;
+  justify-content: space-between;
+  text-align: center;
+  color: #fff;
+}
+
+.botao button{
+  background-color: #1B6BB3;
+  border: none;
+  width: 320px;
+  height: 55px;
+  font-size: 25px;
+  color: #fff;
+}
+
+.botao p{
+  font-size: 56px;
+  margin-top: 40px;
+  font-family: 'Concert One', cursive;
+}
+
+.galery .fotos .img {
   width: 19.9%;
   /* largura de cada imagem */
 }
 
-.fotos .btn{
-  display: flex;
-  margin-bottom: 20px;
-  position: absolute;
+.img img{
+  width: 100%;
 }
+
+.hr {
+  margin: 0;
+}
+
+.servir {
+  background-color: #1b3062;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: auto;
+  height: 30vh;
+}
+
+.servir .btn {
+  width: 20vh;
+  height: 1vw;
+}
+
