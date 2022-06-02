@@ -25,28 +25,27 @@
     <!--header inicio-->
     <div class="header">
         <div class="container">
-            <h1 class="titulo">AcquaTec</h1>
+            <a href="index.html"><img class="logo" src="assets/Midia/MultiMidia_Logo_org_W.png"></a>
             <ul class="navbar">
                 <li>
-                    <a href="./index.html">
-                        Inicial
-                    </a>
+                    <a href="sobre.html">Quem somos</a>
                 </li>
                 <li>
-                    <a href="./simulador.html">Simulador</a>
+                    <a href="https://boasnovas.org.br/home" target="_blank">Igreja</a>
                 </li>
-                <li>|</li>
                 <li>
-                    <a href="./login.html">Login</a>
+                    <a href="">Nossas Equipes</a>
                 </li>
-                <li class="agora">
-                    <a href="./cadastro.html">Cadastro</a>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a class="btn_cadastro" href="cadastro.html">Cadastre-se</a>
                 </li>
             </ul>
         </div>
     </div>
     <!--header fim-->
-
 
     <div class="banner ">
         <div class="alerta_erro">
@@ -70,6 +69,19 @@
                     <span class="tipo_campo">E-mail:</span>
                     <input id="email_input" type="text" placeholder="meuemail@provedor.com">
 
+                    <span class="tipo_campo">Equipe</span>
+                    <select id="select_equipes">
+                        <option value="0">Selecione</option>
+                        <option value="audio">Áudio</option>
+                        <option value="backstage">Backstage</option>
+                        <option value="broadcast">Broadcast</option>
+                        <option value="decoracao">Decoração</option>
+                        <option value="iluminacao">Iluminação</option>
+                        <option value="fotografia">Fotografia</option>
+                        <option value="projecao">Projeção</option>
+                        <option value="transmissao">Transmissão</option>
+                    </select>
+
                     <span class="tipo_campo">Senha:</span>
                     <input id="senha_input" type="password" placeholder="******">
 
@@ -84,20 +96,10 @@
                 </div>
 
                 <div id="div_erros_login">
-
                 </div>
             </div>
         </div>
     </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
-        </div>
-    </div>
-    <!--footer fim-->
-
 
 </body>
 
