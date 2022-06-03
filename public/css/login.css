@@ -84,14 +84,15 @@ body {
   /* LOGIN */
 
 .banner .container .card {
-    background-color: #e5e5e5;
+    background-color: #000000a6;
     height: fit-content;
     width: 400px;
     display: flex;
     flex-direction: column;
     color: palevioletred;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 8px;
+    justify-content: center;
   }
   
   .card {
@@ -116,6 +117,12 @@ body {
   }
 
   /* FORMULÁRIO */
+
+  .banner{
+    display: flex;
+    align-items: center;
+    height: 80vh;
+  }
   
   .alerta_erro{
     display: flex;
