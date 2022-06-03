@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Cadastro</title>
+    <title>Multimídia | Cadastro</title>
 
 
     <script src="./js/funcoes.js"></script>
 
 
-    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="icon" href="assets/Midia/MultiMidia_Logo_org_W.png">
     <link rel="stylesheet" href="./css/cadastro.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -21,7 +21,7 @@
 </head>
 
 <body style="background-image: url(assets/Midia/IgrejaGeral.jpg);">
-    
+
     <!--header inicio-->
     <div class="header">
         <div class="container">
@@ -55,40 +55,42 @@
         </div>
         <div class="container tamanho-conteudo">
             <div class="card medio">
-                <h2>Bem-vindo!</h2>
+                <h2>É um prazer tê-lo como voluntário!</h2>
                 <div class="formulario">
-
                     <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
+                    <div class="div_filha1">
+                        <span class="tipo_campo">Nome:</span>
+                        <input id="nome_input" type="text" placeholder="Seu nome">
 
-                    <span class="tipo_campo">Nome:</span>
-                    <input id="nome_input" type="text" placeholder="Seu nome">
+                        <span class="tipo_campo">E-mail:</span>
+                        <input id="email_input" type="text" placeholder="meuemail@provedor.com">
 
-                    <span class="tipo_campo">E-mail:</span>
-                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+                        <span class="tipo_campo">Equipe</span>
+                        <select id="select_equipes">
+                            <option value="0">Selecione</option>
+                            <option value="audio">Áudio</option>
+                            <option value="backstage">Backstage</option>
+                            <option value="broadcast">Broadcast</option>
+                            <option value="decoracao">Decoração</option>
+                            <option value="iluminacao">Iluminação</option>
+                            <option value="fotografia">Fotografia</option>
+                            <option value="projecao">Projeção</option>
+                            <option value="transmissao">Transmissão</option>
+                        </select>
+                    </div>
 
-                    <span class="tipo_campo">Equipe</span>
-                    <select id="select_equipes">
-                        <option value="0">Selecione</option>
-                        <option value="audio">Áudio</option>
-                        <option value="backstage">Backstage</option>
-                        <option value="broadcast">Broadcast</option>
-                        <option value="decoracao">Decoração</option>
-                        <option value="iluminacao">Iluminação</option>
-                        <option value="fotografia">Fotografia</option>
-                        <option value="projecao">Projeção</option>
-                        <option value="transmissao">Transmissão</option>
-                    </select>
+                    <div class="div_filha2">
+                        <span class="tipo_campo">Senha:</span>
+                        <input id="senha_input" type="password" placeholder="******">
 
-                    <span class="tipo_campo">Senha:</span>
-                    <input id="senha_input" type="password" placeholder="******">
+                        <span class="tipo_campo">Confirmação da Senha:</span>
+                        <input id="confirmacao_senha_input" type="password" placeholder="******">
 
-                    <span class="tipo_campo">Confirmação da Senha:</span>
-                    <input id="confirmacao_senha_input" type="password" placeholder="******">
-
-                    <button class="btn" onclick="cadastrar()">Cadastrar</button>
+                        <button class="btn" onclick="cadastrar()">Cadastrar</button>
+                    </div>
 
                 </div>
                 <div id="div_aguardar" class="loading-div">
@@ -152,7 +154,7 @@
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {

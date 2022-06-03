@@ -47,14 +47,15 @@ body {
   }
 
   .banner .container .card {
-    background-color: #e5e5e5;
+    background-color: #000000a6;
     height: fit-content;
     width: 400px;
     display: flex;
     flex-direction: column;
     color: palevioletred;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 8px;
+    
   }
   
   .card {
@@ -64,6 +65,8 @@ body {
   
   .card h2 {
     font-size: 30px;
+    display: flex;
+    text-align: center;
   }
   
   .card h4 {
@@ -109,7 +112,8 @@ body {
   
   .formulario {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
   }
   
   input {
