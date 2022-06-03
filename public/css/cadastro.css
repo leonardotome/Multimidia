@@ -1,159 +1,180 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: black;
-    background-size: cover;
-  }
-  
-  .logo {
-    width: 160px;
-  }
-  
-  .container {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .header {
-    width: 100%;
-    background-color: black;
-    border-bottom: 3px solid gray;
-  }
-  
-  .header .container {
-    justify-content: space-between;
-  }
-  
-  .header a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .navbar {
-    width: 110vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    list-style: none;
-    font-size: 18px;
-  }
-  
-  .btn_cadastro {
-    cursor: pointer;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  background-size: cover;
+}
 
-  .banner .container .card {
-    background-color: #000000a6;
-    height: fit-content;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    color: palevioletred;
-    align-items: center;
-    border-radius: 8px;
-    
-  }
-  
-  .card {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .card h2 {
-    font-size: 30px;
-    display: flex;
-    text-align: center;
-  }
-  
-  .card h4 {
-    font-size: 16px;
-  }
-  
-  .banner #div_erros_login {
-    margin-top: 15px;
-  }
-  
-  button {
-    cursor: pointer;
-  }
+.logo {
+  height: 15vh;
+}
 
-  /* FORMULARIO */
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.alerta_erro{
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .card_erro {
-    display: none;
-    background-color: #fff;
-    color: black;
-    width: 230px;
-    position: fixed;
-    border-radius: 4px;
-    border: #e6005a 3px solid;
-    padding: 10px;
-    margin-right: 10%;
-  }
-  
-  .card_erro #mensagem_erro{
-    font-weight: 500;
-    font-size: 20px;
-  }
-  
-  .formulario .tipo_campo {
-    font-size: 20px;
-    font-weight: 600 !important;
-  }
-  
-  .formulario {
-    display: flex;
-    flex-direction: row;
+.header {
+  width: 100%;
+  background-color: black;
+  border-bottom: 3px solid gray;
+}
 
-  }
-  
-  input {
-    margin-bottom: 10px;
-    border: 2px solid #32b9cd;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  select {
-    margin-bottom: 9px;
-    border: 2px solid #32b9cd;
-    padding: 9px;
-    text-align: center;
-    border-radius: 25px;
-  }
-  
-  
-  .btn {
-    font-family: "Barlow", sans-serif;
-    border: 0;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 10px 15px;
-    color: white;
-    background-color: #e6005a;
-    width: 120px;
-    align-self: center;
-    margin-top: 5px;
-  }
-  
-  .loading-div {
-    width: 50px;
-    margin: auto;
-    display: none;
-  }
-  
-  .loading-div img {
-    height: 50px;
-    width: 50px;
-  }
+.header .container {
+  justify-content: space-between;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  width: 110vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  font-size: 18px;
+}
+
+.btn_cadastro {
+  cursor: pointer;
+}
+
+.banner .container .card {
+  background-color: #000000a6;
+  height: fit-content;
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  color: palevioletred;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card h2 {
+  font-size: 30px;
+  display: flex;
+  text-align: center;
+}
+
+.card h4 {
+  font-size: 16px;
+}
+
+.banner #div_erros_login {
+  margin-top: 15px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* FORMULARIO */
+
+.banner{
+  display: flex;
+  align-items: center;
+  height: 80vh;
+}
+
+.alerta_erro {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #e6005a 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.formulario .tipo_campo {
+  font-size: 20px;
+  font-weight: 600 !important;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+}
+
+input {
+  margin-bottom: 10px;
+  border: 2px solid #32b9cd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+select {
+  margin-bottom: 9px;
+  border: 2px solid #32b9cd;
+  padding: 9px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn {
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #e6005a;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+}
+
+.loading-div {
+  width: 50px;
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+.div_filha1{
+  display: flex;
+  flex-direction: column;
+}
+
+.div_filha2{
+  display: flex;
+  flex-direction: column;
+}
+
+.div_filha2 .btn{
+  margin-top: 26px;
+}
+
