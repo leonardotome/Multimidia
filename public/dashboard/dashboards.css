@@ -214,11 +214,13 @@ body {
   /* background-color: #c7c7c7; */
 }
 
-.btns-dash {
+.treinamento {
+  color: #fff;
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin: 0;
 }
 
 .graph {
@@ -227,13 +229,4 @@ body {
   padding-top: 45px;
 }
 
-.btn-chart {
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  margin: 5px;
-}
+
