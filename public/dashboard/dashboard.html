@@ -62,17 +62,16 @@
                 <h1>
                     Treinamentos
                 </h1>
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco 
-                <button class="btn-chart" onclick="obterDadosGrafico(1)">Aquario 1</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(2)">Aquario 2</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(3)">Aquario 3</button>
-                <button class="btn-chart" onclick="obterDadosGrafico(4)">Aquario 4</button> -->
+                <hr>
             </div>
-            <div class="graph">
-                <canvas id="canvas_grafico"></canvas>
+            <div class="videos">
+                <div class="audio"></div>
+                <div class="broadcast"></div>
+                <div class="projecao"></div>
+                <div class="transmissao"></div>
             </div>
         </div>
-    </div>
+    </div>  
 
 
 </body>
@@ -193,14 +192,14 @@
         });
 
         function sendData() {
-			var http = new XMLHttpRequest();
-			http.open('POST', 'http://localhost:3000/api/sendData', false);
-			http.send(null);
-		}
+            var http = new XMLHttpRequest();
+            http.open('POST', 'http://localhost:3000/api/sendData', false);
+            http.send(null);
+        }
 
         setInterval(() => {
-			sendData();
-		}, 2000);
+            sendData();
+        }, 2000);
 
         //Atualiza os dados de 5 em 5 segundos
         setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
