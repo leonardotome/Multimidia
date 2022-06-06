@@ -51,7 +51,7 @@
                 Treinamentos
             </h1>
             <p>
-                Olá “NOME_PESSOA”, é uma grande alegria em tê-lo na equipe “VARIÁVEL EQUIPE”. Para nós, não é um
+                Olá <b id="b_nome"></b>, é uma grande alegria em tê-lo na equipe <b id="b_equipe"></b>. Para nós, não é um
                 requisito você saber tudo que fazemos durante o nosso trabalho. No entanto, estamos na multímidia
                 para aprender e principalmente servir ao nosso Deus e isto devemos fazer com excelência como se
                 estivessemos servindo diretamento a Cristo, assim como diz no versículo Colossensses 3:23: “Tudo o
@@ -127,6 +127,9 @@
 <script>    
 
     var equipe = sessionStorage.EQUIPE;
+    var nome = sessionStorage.NOME_USUARIO;
+    b_nome.innerHTML = nome;
+    b_equipe.innerHTML = equipe;
 
     function treinamento() {
 
