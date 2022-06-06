@@ -5,80 +5,42 @@ body {
   font-family: "Exo 2", sans-serif;
 }
 
-/* git
-.publicacao-btn-editar {
-  cursor: pointer;
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 5px 8px;
-  color: white;
-  background-color: #e6005a;
-  width: 80px;
+.logo {
+  width: 160px;
 }
 
-.publicacao {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  border-bottom: 3px solid #e6005a;
-  padding: 20px;
-}
-
-.publicacao > *:not(:last-child) {
-  padding: 0 0 10px 0;
-}
-
-.div-results {
+.header {
   width: 100%;
+  background-color: black;
+  border-bottom: 3px solid gray;
 }
 
-.div-results .feed-container {
-  background-color: #212124;
-  border-radius: 5px;
-  margin-bottom: 80px;
+.header .container {
+  justify-content: space-between;
 }
 
-.div-buttons {
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  width: 110vh;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  font-size: 18px;
 }
 
-.div-buttons > * {
-  margin-left: 30px;
-} */
-
-/* pagina graficos */
-
-/* .dash-header {
-  background-color: #212124;
-}
-
-.dash {
-  width: 75%;
-  position: relative;
-  top: 0;
-  left: 25%;
-  background-color: #161618;
+.img {
+  width: auto;
+  max-height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%; */
+}
 
-  /* width: 75%;
-    display: flex;
-    background-color: #161618;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;*/
-  /* height: 100vh; */
-/* } */
 
 .treinamento {
   color: #fff;
@@ -110,14 +72,38 @@ hr{
   justify-content: center;
   flex-direction: row;
 }
+iframe{
+  margin: 10px;
+}
 
-/* .audio{
+.audio{
   display: flex;
   align-items: center;
   justify-content: center;  
   flex-direction: row;
-} */
+  display: none;
+}
 
-iframe{
-  margin: 10px;
+.broadcast{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  flex-direction: row;
+  display: none;
+}
+
+.projecao{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  flex-direction: row;
+  display: none;
+}
+
+.transmissao{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  flex-direction: row;
+  display: none;
 }

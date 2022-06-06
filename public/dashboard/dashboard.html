@@ -22,47 +22,69 @@
 
 </head>
 
-<body onload="validarSessao(), atualizarFeed()">
-    <!-- <body onload="validarSessao()"> -->
+<body onload="validarSessao(), treinamento()">
+    
 
+<!-- 
+<div class="header">
+    <h1>Multimida</h1>
 
-    <!-- <div class="header">
-            <h1>Multimida</h1>
+    <div class="hello">
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+    </div>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Escala</h3>
-                </a>
-            </div>
+    <div class="btn-nav-white">
+        <a href="./cards.html">
+            <h3>Escala</h3>
+        </a>
+    </div>
 
-            <div class="btn-nav">
+    <div class="btn-nav">
 
-                <h3>Treinamentos</h3>
+        <h3>Treinamentos</h3>
 
-            </div>
+    </div>
 
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Ordem do culto</h3>
-                </a>
-            </div>
+    <div class="btn-nav-white">
+        <a href="./mural.html">
+            <h3>Ordem do culto</h3>
+        </a>
+    </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+    <div class="btn-logout" onclick="limparSessao()">
+        <h3>Sair</h3>
+    </div> -->
 
-        </div> -->
+    <!-- </div> -->
 
+    <div class="header">
+        <div class="container">
+            <a href="index.html"><img class="logo" src="../assets/Midia/MultiMidia_Logo_org_W.png"></a>
+            <ul class="navbar">
+                <li>
+                    <a href="sobre.html">Quem somos</a>
+                </li>
+                <li>
+                    <a href="https://boasnovas.org.br/home" target="_blank">Igreja</a>
+                </li>
+                <li>
+                    <a href="">Nossas Equipes</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a class="btn_cadastro" href="cadastro.html">Cadastre-se</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
     <div class="dash">
         <div class="treinamento">
             <h1>
                 Treinamentos
             </h1>
-            <hr>
             <p>
                 Olá “NOME_PESSOA”, é uma grande alegria em tê-lo na equipe “VARIÁVEL EQUIPE”. Para nós, não é um
                 requisito você saber tudo que fazemos durante o nosso trabalho. No entanto, estamos na multímidia
@@ -80,201 +102,90 @@
 
         <div class="videos">
 
-            <div class="audio">
+            <!--.audio-->
+            <div class="audio" id="videos_audio">
 
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/diSsZVoVB9s"
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/diSsZVoVB9s"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/AuXI6XfK9DU"
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AuXI6XfK9DU"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe> -->
+                    allowfullscreen></iframe>
             </div>
-            <!--.audio-->
-
-            <div class="broadcast">
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ay3DAlyCFaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/YWTj3qofkJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <!--.broadcast-->
+            <div class="broadcast" id="videos_broadcast">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ay3DAlyCFaM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YWTj3qofkJ0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-            <div class="projecao">
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/WhHo-8T36ZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/FkZ_vCC6PLo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <!--.projecao-->
+            <div class="projecao" id="videos_projecao">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/WhHo-8T36ZI"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FkZ_vCC6PLo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-            <div class="transmissao">
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4hFAdkB_CHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OgN_vEVROvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+            <!--.transmissao-->
+            <div class="transmissao" id="videos_transmissao">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4hFAdkB_CHc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OgN_vEVROvQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
         <!--.video-->
-
+        
     </div>
     </div>
-
 
 </body>
 
 </html>
 
-<script>
+<script>    
 
-    let proximaAtualizacao;
+    var equipe = sessionStorage.EQUIPE;
 
-    window.onload = obterDadosGrafico(1);
+    function treinamento() {
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    //verificar_autenticacao();
-
-    // altere aqui como os dados serão exibidos
-    // e como são recuperados do BackEnd
-    function obterDadosGrafico(idAquario) {
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
+        if (equipe == 'audio') {
+            videos_audio.style.display = "block";
+            videos_broadcast.style.display = "none";
+            videos_projecao.style.display = "none";
+            videos_transmissao.style.display = "none";
+        } else if (equipe == 'broadcast') {
+            videos_audio.style.display = "none";
+            videos_broadcast.style.display = "block";
+            videos_projecao.style.display = "none";
+            videos_transmissao.style.display = "none";
+        } else if (equipe == 'projecao') {
+            videos_audio.style.display = "none";
+            videos_broadcast.style.display = "none";
+            videos_projecao.style.display = "block";
+            videos_transmissao.style.display = "none";
+        } else if (equipe == 'transmissao') {
+            videos_audio.style.display = "none";
+            videos_broadcast.style.display = "none";
+            videos_projecao.style.display = "none";
+            videos_transmissao.style.display = "block";
         }
-
-        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-
-                    plotarGrafico(resposta, idAquario);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-
     }
 
-    // só altere aqui se souber o que está fazendo!
-    function plotarGrafico(resposta, idAquario) {
-        console.log('iniciando plotagem do gráfico...');
-
-        var dados = {
-            labels: [],
-            datasets: [
-                {
-                    yAxisID: 'y-umidade',
-                    label: 'Umidade',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#32b9cd8f',
-                    fill: true,
-                    data: []
-                },
-                {
-                    yAxisID: 'y-temperatura',
-                    label: 'Temperatura',
-                    borderColor: '#FFF',
-                    backgroundColor: '#32b9cd8f',
-                    fill: true,
-                    data: []
-                }
-            ]
-        };
-
-        for (i = 0; i < resposta.length; i++) {
-            var registro = resposta[i];
-            dados.labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
-            dados.datasets[1].data.push(registro.temperatura);
-        }
-
-        console.log(JSON.stringify(dados));
-
-        var ctx = canvas_grafico.getContext('2d');
-        window.grafico_linha = Chart.Line(ctx, {
-            data: dados,
-            //Configurações do gráfico
-            options: {
-                responsive: true,
-                animation: { duration: 500 },
-                hoverMode: 'index',
-                stacked: false,
-                title: {
-                    display: true,
-                    text: 'Histórico recente de umidade/temperatura'
-                },
-                scales: {
-                    yAxes: [{
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
-                        id: 'y-temperatura',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 100,
-                            min: 0
-                        }
-                    }, {
-                        type: 'linear',
-                        display: false,
-                        position: 'right',
-                        id: 'y-umidade',
-                        ticks: {
-                            beginAtZero: true,
-                            max: 100,
-                            min: 0
-                        },
-
-                        gridLines: {
-                            drawOnChartArea: false,
-                        },
-                    }],
-                }
-            }
-        });
-
-        function sendData() {
-            var http = new XMLHttpRequest();
-            http.open('POST', 'http://localhost:3000/api/sendData', false);
-            http.send(null);
-        }
-
-        setInterval(() => {
-            sendData();
-        }, 2000);
-
-        //Atualiza os dados de 5 em 5 segundos
-        setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
-    }
-
-    // só mexer se quiser alterar o tempo de atualização
-    // ou se souber o que está fazendo!
-    function atualizarGrafico(idAquario, dados) {
-
-        fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (novoRegistro) {
-
-                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    console.log(`Dados atuais do gráfico: ${dados}`);
-
-                    // tirando e colocando valores no gráfico
-                    dados.labels.shift(); // apagar o primeiro
-                    dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
-                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-                    dados.datasets[1].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de umidade
-
-                    window.grafico_linha.update();
-
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-
-    }
 </script>

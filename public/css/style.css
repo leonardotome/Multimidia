@@ -7,17 +7,16 @@ body {
   background-color: black;
   overflow-x: hidden;
 }
-
-.logo {
-  width: 160px;
-}
-
 .container {
   width: 100%;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logo {
+  width: 160px;
 }
 
 .header {
