@@ -5,57 +5,7 @@ body {
   font-family: "Exo 2", sans-serif;
 }
 
-.dash-right .avisos {
-  width: 100%;
-  /* border: 3px solid pink; */
-  color: rgb(216, 216, 216);
-  font-family: "Exo 2", sans-serif;
-}
-
-.dash-right .avisos .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dash-right .avisos .container .div-form {
-  width: 100%;
-}
-
-.dash-right .avisos .container .div-form #form_postagem {
-  width: 100%;
-}
-
-.dash-right .avisos .div-form label {
-  width: 100%;
-}
-
-.dash-right .avisos .div-form input {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.dash-right .avisos .div-form textarea {
-  width: 100%;
-  /* color: #E6005A; */
-  border: 3px solid #e6005a;
-  background-color: white;
-  border-radius: 5px;
-}
-
-.dash-right .avisos .div-form button {
-  cursor: pointer;
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
-  width: 120px;
-}
-
+/* git
 .publicacao-btn-editar {
   cursor: pointer;
   font-family: "Exo 2", sans-serif;
@@ -101,11 +51,11 @@ body {
 
 .div-buttons > * {
   margin-left: 30px;
-}
+} */
 
 /* pagina graficos */
 
-.dash-header {
+/* .dash-header {
   background-color: #212124;
 }
 
@@ -118,6 +68,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%; */
 
   /* width: 75%;
     display: flex;
@@ -125,8 +77,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;*/
-  height: 100vh;
-}
+  /* height: 100vh; */
+/* } */
 
 .treinamento {
   color: #fff;
@@ -135,10 +87,37 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 50vw;
+  width: 100vw;
 }
 
-.treinamento {
-  border-bottom: 3px solid #1B6BB3;
+.treinamento h1{
+  margin-bottom: 3px;
+}
+
+hr{
+  border-bottom: 2px solid #1B6BB3;
   width: 100%;
+}
+
+.treinamento p{
+  font-size: 20px;
+  width: 90%;
+}
+
+.dash .videos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.audio{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  flex-direction: row;
+}
+
+iframe{
+  margin: 5px;
 }
