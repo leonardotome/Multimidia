@@ -104,20 +104,20 @@ hr{
   width: 90%;
 }
 
-.dash .videos{
+.videos{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-.audio{
+/* .audio{
   display: flex;
   align-items: center;
   justify-content: center;  
   flex-direction: row;
-}
+} */
 
 iframe{
-  margin: 5px;
+  margin: 10px;
 }
