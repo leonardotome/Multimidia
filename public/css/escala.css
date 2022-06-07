@@ -1,0 +1,97 @@
+.body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.logo {
+    width: 160px;
+}
+
+.header {
+    width: 100%;
+    background-color: black;
+    border-bottom: 3px solid gray;
+}
+
+.header .container {
+    justify-content: space-between;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    width: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: 18px;
+}
+
+.banner_escala {
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.container_escala {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_escala h1 {
+    margin-bottom: 3px;
+}
+
+.container_escala p {
+    font-size: 20px;
+}
+
+.cadastrar_escala {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.escala {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+}
+
+.escala p {
+    display: flex;
+    text-align: center;
+}
+
+.cadastrar_escala button {
+    height: 7vh;
+    border-radius: 8px;
+}
+
+.exibir_escala{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.escala_completa{
+    display: flex;
+    flex-direction: column;
+}
