@@ -97,9 +97,45 @@ function cadastrar(req, res) {
     }
 }
 
+function escala(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var data_escala = req.body.data_escalaServer;
+    var culto = req.body.cultoServer;
+    var idUsuario = req.body.idUsuarioServer;
+
+    // Faça as validações dos valores
+    if (data_escala == undefined) {
+        res.status(400).send("Sua data_escala está undefined!");
+    } else if (culto == undefined) {
+        res.status(400).send("Seu culto está undefined!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Sua idUsuario está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.escala(data_escala, culto, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    escala
 }

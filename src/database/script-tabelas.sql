@@ -15,13 +15,15 @@ CREATE TABLE usuario (
 	equipe VARCHAR(50)
 );
 
+-- ALTER TABLE usuario MODIFY COLUMN equipe VARCHAR (50) CONSTRAINT chkEquipe CHECK(equipe in('audio', 'broadcast', 'projecao', 'transmissao'))
+
 CREATE TABLE Escala (
 	idEscala INT AUTO_INCREMENT,
     data_escala DATE,
-    culto VARCHAR(50),
+    culto VARCHAR(50) CONSTRAINT chkCulto CHECK(culto in('quarta', 'sexta', 'domingo_manha', 'domingo_noite')),
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
     PRIMARY KEY(idEscala, fkUsuario)
-);
+)	AUTO_INCREMENT = 10;
 
 

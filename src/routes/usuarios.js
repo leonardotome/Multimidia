@@ -20,4 +20,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/escala", function (req, res) {
+    usuarioController.escala(req, res);
+});
+
 module.exports = router;
