@@ -8,54 +8,20 @@ CREATE DATABASE multimidia;
 USE multimidia;
 
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50),
 	equipe VARCHAR(50)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DOUBLE,
-	umidade DOUBLE,
-	momento DATETIME,
-	fk_aquario INT
-);
-
-
-
-
-/* para sql server - remoto - produção */
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	temperatura DECIMAL,
-	umidade DECIMAL,
-	momento DATETIME,
-	fk_aquario INT
+CREATE TABLE Escala (
+	idEscala INT AUTO_INCREMENT,
+    data_escala DATE,
+    culto VARCHAR(50),
+    fkUsuario INT,
+    FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
+    PRIMARY KEY(idEscala, fkUsuario)
 );
 
 
