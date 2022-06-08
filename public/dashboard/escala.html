@@ -18,7 +18,7 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body onload="exibir_escala()">
 
     <div class="header">
         <div class="container">
@@ -125,7 +125,6 @@
                 cardErro.style.display = "block";
                 alert("Escala cadastrada");
 
-                exibir_escala();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -163,14 +162,14 @@
 
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                    exibirEscala.innerHTML += 'boa noite'
+                    console.table(resposta.lenght)
                     
-                    for (var contador = 0; contador < resposta.lenght; contador++) {
+                    for (var contador = 0; contador < resposta.length; contador++) {
                         exibirEscala.innerHTML += `
-                        Data: ${resposta[contador].data_escala} 
-                        Culto: ${resposta[contador].culto}
+                        Data: ${resposta[contador].Data} 
+                        Culto: ${resposta[contador].Dia}
+                        Horario de chegada: ${resposta[contador].Chegada}
+                        Horário de início: ${resposta[contador].Inicio}
                         <br>`;                        
                     }
                 })
