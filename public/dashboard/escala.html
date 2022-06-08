@@ -22,7 +22,7 @@
 
     <div class="header">
         <div class="container">
-            <a href="index.html"><img class="logo" src="../assets/Midia/MultiMidia_Logo_org_W.png"></a>
+            <img class="logo" src="../assets/Midia/MultiMidia_Logo_org_W.png">
             <ul class="navbar">
                 <li>
                     <a href="escala.html">Escala</a>
@@ -70,7 +70,7 @@
                 <p>
                     Veja os dias que você está escalado para servir:
                 </p>
-                <div class="escala_completa"></div>
+                <div id="exibirEscala" class="escala_completa"></div>
             </div>
         </div>
     </div>
@@ -83,13 +83,13 @@
 
 </html>
 <script>
-    
+
 
     function cadastrar() {
 
         var data_escalaVar = ipt_data.value;
         var cultoVar = select_culto.value;
-        var idUsuarioVar = sessionStorage.ID_USUARIO;
+        var idUsuarioVar = Number(sessionStorage.ID_USUARIO);
 
         if (data_escalaVar == "" || cultoVar == 0) {
             cardErro.style.display = "block"
@@ -98,9 +98,9 @@
             finalizarAguardar();
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        // else {
+        //     setInterval(sumirMensagem, 5000)
+        // }
 
         // Enviando o valor da nova input
         //****** Parametrizar rota
@@ -115,7 +115,7 @@
                 data_escalaServer: data_escalaVar,
                 cultoServer: cultoVar,
                 idUsuarioServer: idUsuarioVar,
-                
+
             })
         }).then(function (resposta) {
 
@@ -123,30 +123,85 @@
 
             if (resposta.ok) {
                 cardErro.style.display = "block";
-                
                 alert("Escala cadastrada");
 
-                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                // setTimeout(() => {
-                //     window.location = "escala.html";
-                // }, "2000")
-
-                limparFormulario();
-                
+                exibir_escala();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            
+
         });
 
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+    function exibir_escala() {
+        var idUsuarioVar = Number(sessionStorage.ID_USUARIO);
+        var horario_chegada = ``;
+        var horario_inicio = ``;
+
+        console.log("Chegou na função exibir escala");
+        fetch("/usuarios/exibir", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idUsuarioServer: idUsuarioVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    exibirEscala.innerHTML += 'boa noite'
+                    
+                    for (var contador = 0; contador < resposta.lenght; contador++) {
+                        exibirEscala.innerHTML += `
+                        Data: ${resposta[contador].data_escala} 
+                        Culto: ${resposta[contador].culto}
+                        <br>`;                        
+                    }
+                })
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
     }
+
+    function horario() {
+
+        var culto = select_culto.value;
+        var horario_chegada = ``;
+        var horario_inicio = ``;
+
+        if (culto == 'quarta' || culto == 'sexta') {
+            horario_chegada = `19:00`;
+            horario_inicio = `20:00`;
+        } else if (culto == 'domingo_manha') {
+            horario_chegada = `9:30`;
+            horario_inicio = `10:30`;
+        } else {
+            horario_chegada = `17:30`;
+            horario_inicio = `18:30`;
+        }
+    }
+
 
 </script>

@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    overflow-x: hidden;
+  }
+  .container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 160px;
+  }
+  
+  .header {
+    width: 100%;
+    background-color: black;
+    border-bottom: 3px solid gray;
+  }
+  
+  .header .container {
+    justify-content: space-between;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar {
+    width: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: 18px;
+  }
+  
+  .btn_cadastro {
+    cursor: pointer;
+  }
+  
+  .img {
+    width: auto;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .equipes .container{
+      display: flex;
+      width: 80vw;
+      flex-direction: column;
+      align-items: center;
+  }
+

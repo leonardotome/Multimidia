@@ -24,4 +24,8 @@ router.post("/escala", function (req, res) {
     usuarioController.escala(req, res);
 });
 
+router.post("/exibir", function (req, res) {
+    usuarioController.exibir(req, res);
+});
+
 module.exports = router;
