@@ -51,14 +51,14 @@ function exibir(idUsuario) {
     var instrucao = `
     select data_escala as Data, culto as Dia,
     case
-       when culto = 'sexta' or culto = 'quarta' then '19:00'
-       when culto = 'domingo_noite' then '17:30'
-       when culto = 'domingo_manha' then '09:30'
+       when culto = 'Sexta-Feira' or culto = 'Quarta-Feira' then '19:00'
+       when culto = 'Domingo - Noite' then '17:30'
+       when culto = 'Domingo - Manhã' then '09:30'
        else 'Invalido' end Chegada,
     case
-       when culto = 'sexta' or culto = 'quarta' then '20:00'
-       when culto = 'domingo_noite' then '18:30'
-       when culto = 'domingo_manha' then '10:30'
+       when culto = 'Sexta-Feira' or culto = 'Quarta-Feira' then '20:00'
+       when culto = 'Domingo - Noite' then '18:30'
+       when culto = 'Domingo - Manhã' then '10:30'
        else 'Invalido' end Inicio
    from escala
    WHERE fkUsuario = '${idUsuario}';

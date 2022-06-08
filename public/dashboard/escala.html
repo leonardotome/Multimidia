@@ -56,10 +56,10 @@
                     <p>Selecione qual culto irá servir:</p>
                     <select id="select_culto">
                         <option value="0">Selecione</option>
-                        <option value="quarta">Quarta-Feira</option>
-                        <option value="sexta">Sexta-Feira</option>
-                        <option value="domingo_manha">Domingo - Manhã</option>
-                        <option value="domingo_noite">Domingo - Noite</option>
+                        <option value="Quarta-Feira">Quarta-Feira</option>
+                        <option value="Sexta-Feira">Sexta-Feira</option>
+                        <option value="Domingo - Manhã">Domingo - Manhã</option>
+                        <option value="Domingo - Noite">Domingo - Noite</option>
                     </select>
                 </div>
                 <button onclick="cadastrar()">
@@ -124,6 +124,7 @@
             if (resposta.ok) {
                 cardErro.style.display = "block";
                 alert("Escala cadastrada");
+                window.location.reload()
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -164,9 +165,20 @@
                 resposta.json().then(function (resposta) {
                     console.table(resposta.lenght)
                     
-                    for (var contador = 0; contador < resposta.length; contador++) {
+                    for (var contador = 0; contador < 1; contador++) {
+                        // let data = resposta[contador].Data.split('T')[0].split('-').reverse().join('/')
+                        let data = resposta[contador].Data
+                        console.log(data);
+                        data = data.split('T')
+                        console.log(data);
+                        data = data[0].split('-')
+                        console.log(data);
+                        data = data.reverse();
+                        console.log(data);
+                        data = data.join('/');
+                        console.log(data);
                         exibirEscala.innerHTML += `
-                        Data: ${resposta[contador].Data} 
+                        Data: ${data} 
                         Culto: ${resposta[contador].Dia}
                         Horario de chegada: ${resposta[contador].Chegada}
                         Horário de início: ${resposta[contador].Inicio}
@@ -182,24 +194,6 @@
         });
 
         return false;
-    }
-
-    function horario() {
-
-        var culto = select_culto.value;
-        var horario_chegada = ``;
-        var horario_inicio = ``;
-
-        if (culto == 'quarta' || culto == 'sexta') {
-            horario_chegada = `19:00`;
-            horario_inicio = `20:00`;
-        } else if (culto == 'domingo_manha') {
-            horario_chegada = `9:30`;
-            horario_inicio = `10:30`;
-        } else {
-            horario_chegada = `17:30`;
-            horario_inicio = `18:30`;
-        }
     }
 
 
