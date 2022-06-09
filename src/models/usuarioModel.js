@@ -51,12 +51,12 @@ function exibir(idUsuario) {
     var instrucao = `
     select idEscala, data_escala as Data, culto as Dia, Presenca,
     case
-       when culto = 'Sexta-Feira' or culto = 'Durante a semana' then '19:00'
+       when culto = 'Durante a semana' then '19:00'
        when culto = 'Domingo - Noite' then '17:30'
        when culto = 'Domingo - Manhã' then '09:30'
        else 'Invalido' end Chegada,
     case
-       when culto = 'Sexta-Feira' or culto = 'Durante a semana' then '20:00'
+       when culto = 'Durante a semana' then '20:00'
        when culto = 'Domingo - Noite' then '18:30'
        when culto = 'Domingo - Manhã' then '10:30'
        else 'Invalido' end Inicio
