@@ -61,9 +61,14 @@
                         <option value="Domingo - Noite">Domingo - Noite</option>
                     </select>
                 </div>
-                <button onclick="cadastrar()">
-                    Cadastrar escala
-                </button>
+                <div class="btn_html">
+                    <button onclick="cadastrar()">
+                        Cadastrar escala
+                    </button>
+                    <button onclick="analise1()">
+                        Análise de escalas
+                    </button>
+                </div>
             </div>
             <div class="exibir_escala">
                 <p>
@@ -190,7 +195,7 @@
                             </span>
                             <hr>    
                             <br>`;
-                            
+
                         } else {
                             exibirEscala.innerHTML += `
                             Data: ${data}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
@@ -247,6 +252,41 @@
         });
 
     }
+
+    function analise1() {
+
+        var fkUsuarioVar = Number(sessionStorage.ID_USUARIO);
+
+        fetch("/usuarios/analise1", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkUsuarioServer: fkUsuarioVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+                alert(`Select qtd dias de escala`);
+                console.log(`Você está escalado em ${resposta[0].qtd_escala} cultos`);
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+
+
+    }
+
+
 
 
 </script>

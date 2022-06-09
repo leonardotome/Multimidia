@@ -79,11 +79,24 @@ function presenca(idEscala) {
     return database.executar(instrucao);
 }
 
+function analise1(fkUsuario) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", fkUsuario);
+
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+    SELECT COUNT(idEscala) 'qtd_escala' FROM Escala WHERE fkUsuario = ${fkUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     escala,
     exibir,
-    presenca
+    presenca,
+    analise1
 };

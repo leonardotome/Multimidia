@@ -32,4 +32,8 @@ router.post("/presenca", function (req, res) {
     usuarioController.presenca(req, res);
 });
 
+router.post("/analise1", function (req, res) {
+    usuarioController.analise1(req, res);
+});
+
 module.exports = router;

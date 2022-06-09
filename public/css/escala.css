@@ -81,6 +81,12 @@
 .cadastrar_escala button {
     height: 7vh;
     border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.btn_html {
+    display: flex;
+    flex-direction: column;
 }
 
 .exibir_escala{
