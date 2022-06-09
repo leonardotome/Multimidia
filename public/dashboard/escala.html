@@ -274,7 +274,6 @@
                 resposta.json().then(function (resposta) {
                     console.table(resposta);
                     cardErro.style.display = "block";
-                    alert(`Select qtd dias de escala`);
                     alert(`Você está escalado em ${resposta[0].qtd_escala} cultos`);
 
                 })
@@ -283,7 +282,6 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-
         });
 
 

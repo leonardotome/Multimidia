@@ -1,8 +1,3 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-
-/* para workbench - local - desenvolvimento */
 CREATE DATABASE multimidia;
 
 USE multimidia;
@@ -20,10 +15,22 @@ CREATE TABLE usuario (
 CREATE TABLE Escala (
 	idEscala INT AUTO_INCREMENT,
     data_escala DATE,
-    culto VARCHAR(50) CONSTRAINT chkCulto CHECK(culto in('quarta', 'sexta', 'domingo_manha', 'domingo_noite')),
+    culto VARCHAR(50) CONSTRAINT chkCulto CHECK(culto in('Quarta-feira', 'Domingo - Manhã', 'Domingo - Noite')),
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario),
-    PRIMARY KEY(idEscala, fkUsuario)
+    PRIMARY KEY(idEscala, fkUsuario),
+    Presenca VARCHAR(50) DEFAULT ('Ausente')
 )	AUTO_INCREMENT = 10;
 
-
+select culto as Dia,
+ case
+	when culto = 'Durante a semana' then '19:00'
+    when culto = 'Domingo - Noite' then '17:30'
+    when culto = 'Domingo - Manhã' then '09:30'
+    else 'Invalido' end Chegada,
+ case
+	when culto = 'Sexta-Feira' or culto = 'Durante a semana' then '20:00'
+    when culto = 'Domingo - Noite' then '18:30'
+    when culto = 'Domingo - Manhã' then '10:30'
+    else 'Invalido' end Inicio
+from escala;
