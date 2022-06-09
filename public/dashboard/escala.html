@@ -18,23 +18,21 @@
         rel="stylesheet">
 </head>
 
-<body onload="exibir_escala()"
-
-    <div class="header">
-        <div class="container">
-            <img class="logo" src="../assets/Midia/MultiMidia_Logo_org_W.png">
-            <ul class="navbar">
-                <li>
-                    <a href="escala.html">Escala</a>
-                </li>
-                <li>
-                    <a href="treinamentos.html">Treinamentos</a>
-                </li>
-                <li>
-                    <a href="../index.html">Sair</a>
-                </li>
-            </ul>
-        </div>
+<body onload="exibir_escala()" <div class="header">
+    <div class="container">
+        <img class="logo" src="../assets/Midia/MultiMidia_Logo_org_W.png">
+        <ul class="navbar">
+            <li>
+                <a href="escala.html">Escala</a>
+            </li>
+            <li>
+                <a href="treinamentos.html">Treinamentos</a>
+            </li>
+            <li>
+                <p class="sair" onclick="limparSessao()">Sair</p>
+            </li>
+        </ul>
+    </div>
     </div>
 
     <div class="banner_escala">
@@ -44,8 +42,8 @@
                 <br>
                 <br>
                 <center><button onclick="fechar()">
-                    Fechar
-                </button></center>
+                        Fechar
+                    </button></center>
             </div>
             <div class="container_escala">
                 <h1>Escala</h1>
@@ -294,7 +292,7 @@
 
     }
 
-    function fechar(){
-            modalPresenca.style.display = "none";
-        }
+    function fechar() {
+        modalPresenca.style.display = "none";
+    }
 </script>

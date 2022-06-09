@@ -107,3 +107,8 @@ iframe{
   flex-direction: row;
   display: none;
 }
+
+.sair{
+  color: #fff;
+  cursor: pointer;
+}
