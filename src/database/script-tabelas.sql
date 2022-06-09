@@ -38,5 +38,6 @@ from escala;
 SELECT * FROM escala;	
 select*from usuario;
 
-SELECT COUNT(Presenca) FROM Escala WHERE Presenca = 'Presente' AND fkUsuario = 1;
-SELECT COUNT(idEscala) AS 'qtd_escala' FROM Escala WHERE fkUsuario = 6;
+SELECT COUNT(Presenca) AS 'quantidade' FROM Escala where fkUsuario = 3
+union
+SELECT COUNT(Presenca) AS 'quantidade' FROM Escala where fkUsuario = 3 and presenca = 'Presente';
