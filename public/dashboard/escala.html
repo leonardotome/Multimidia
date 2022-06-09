@@ -41,45 +41,54 @@
     </div>
 
     <div class="banner_escala">
-        <div class="container_escala">
-            <h1>Escala</h1>
-            <p>
-                Cadastre aqui os seus dias de escala e utilize esta funcionalidade para organizar os seus dias de
-                servir:
-            </p>
-            <div class="cadastrar_escala">
-                <div class="escala">
-                    <p>Selecione a data que você irá servir:</p>
-                    <input id="ipt_data" type="date">
-                </div>
-                <div class="escala">
-                    <p>Selecione qual culto irá servir:</p>
-                    <select id="select_culto">
-                        <option value="0">Selecione</option>
-                        <option value="Quarta-feira">Quarta-feira</option>
-                        <option value="Domingo - Manhã">Domingo - Manhã</option>
-                        <option value="Domingo - Noite">Domingo - Noite</option>
-                    </select>
-                </div>
-                <div class="btn_html">
-                    <button onclick="cadastrar()">
-                        Cadastrar escala
-                    </button>
-                    <button onclick="analise()">
-                        Análise de escalas
-                    </button>
-                </div>
+        <div class="modal_analise">
+            <div class="modal_presenca" id="modalPresenca">
+                <span id="mensagem_modal_analise" style="text-align: center;"></span>
+                <br>
+                <br>
+                <center><button onclick="fechar()">
+                    Fechar
+                </button></center>
             </div>
-            <div class="exibir_escala">
+            <div class="container_escala">
+                <h1>Escala</h1>
                 <p>
-                    Veja os dias que você está escalado para servir:
+                    Cadastre aqui os seus dias de escala e utilize esta funcionalidade para organizar os seus dias de
+                    servir:
                 </p>
-                <div id="exibirEscala" class="escala_completa"></div>
+                <div class="cadastrar_escala">
+                    <div class="escala">
+                        <p>Selecione a data que você irá servir:</p>
+                        <input id="ipt_data" type="date">
+                    </div>
+                    <div class="escala">
+                        <p>Selecione qual culto irá servir:</p>
+                        <select id="select_culto">
+                            <option value="0">Selecione</option>
+                            <option value="Quarta-feira">Quarta-feira</option>
+                            <option value="Domingo - Manhã">Domingo - Manhã</option>
+                            <option value="Domingo - Noite">Domingo - Noite</option>
+                        </select>
+                    </div>
+                    <div class="btn_html">
+                        <button onclick="cadastrar()">
+                            Cadastrar escala
+                        </button>
+                        <button onclick="analise()">
+                            Análise de escalas
+                        </button>
+                    </div>
+                </div>
+                <div class="exibir_escala">
+                    <p>
+                        Veja os dias que você está escalado para servir:
+                    </p>
+                    <div id="exibirEscala" class="escala_completa"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="cardErro"></div>
-    <div id="divAguardar"></div>
+        <div id="cardErro"></div>
+        <div id="divAguardar"></div>
 
 
 
@@ -205,8 +214,6 @@
                             <hr>    
                             <br>`;
                         }
-
-
                     }
                 })
             } else {
@@ -275,7 +282,11 @@
                 resposta.json().then(function (resposta) {
                     console.table(resposta);
                     cardErro.style.display = "block";
-                    alert(`Você está escalado em ${resposta[0].qtd_escala} cultos`);
+                    modalPresenca.style.display = "block";
+                    mensagem_modal_analise.innerHTML = `
+                    Você foi escalado para servir em <b>${resposta[0].quantidade}</b> cultos
+                    e esteve presente em <b>${resposta[1].quantidade}</b> cultos`;
+
                 })
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -284,31 +295,9 @@
             console.log(`#ERRO: ${resposta}`);
         });
 
-
-        //Analise 2
-        fetch("/usuarios/analise2", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                fkUsuarioServer: fkUsuarioVar,
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                resposta.json().then(function (resposta) {
-                    console.table(resposta);
-                    cardErro.style.display = "block";
-                    alert(`Você esteve presente em ${resposta[0].Presente} cultos`);
-                })
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
     }
+
+    function fechar(){
+            modalPresenca.style.display = "none";
+        }
 </script>

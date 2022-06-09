@@ -115,3 +115,27 @@
     justify-content: center;
     margin-top: 15px;
 }
+
+.modal_analise{
+    display: flex;
+    justify-content: center;
+}
+
+.modal_presenca{
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 360px;
+    position: fixed;
+    border-radius: 35px;
+    border: #1B6BB3 3px solid;
+    padding: 100px 180px;
+    flex-direction: column;   
+}
+
+.modal_presenca #mensagem_modal{
+    font-weight: 500;
+    font-size: 60px;
+    justify-content: center;
+    align-items: center;
+}
