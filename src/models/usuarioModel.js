@@ -49,14 +49,14 @@ function exibir(idUsuario) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    select data_escala as Data, culto as Dia,
+    select idEscala, data_escala as Data, culto as Dia,
     case
-       when culto = 'Sexta-Feira' or culto = 'Quarta-Feira' then '19:00'
+       when culto = 'Sexta-Feira' or culto = 'Durante a semana' then '19:00'
        when culto = 'Domingo - Noite' then '17:30'
        when culto = 'Domingo - Manhã' then '09:30'
        else 'Invalido' end Chegada,
     case
-       when culto = 'Sexta-Feira' or culto = 'Quarta-Feira' then '20:00'
+       when culto = 'Sexta-Feira' or culto = 'Durante a semana' then '20:00'
        when culto = 'Domingo - Noite' then '18:30'
        when culto = 'Domingo - Manhã' then '10:30'
        else 'Invalido' end Inicio
@@ -66,10 +66,24 @@ function exibir(idUsuario) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
+
+function presenca(idEscala) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idEscala);
+
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucao = `
+    UPDATE escala SET Presenca = 'Presente' WHERE idEscala = ${idEscala};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
     escala,
-    exibir
+    exibir,
+    presenca
 };

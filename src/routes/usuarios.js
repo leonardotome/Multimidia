@@ -28,4 +28,8 @@ router.post("/exibir", function (req, res) {
     usuarioController.exibir(req, res);
 });
 
+router.post("/presenca", function (req, res) {
+    usuarioController.presenca(req, res);
+});
+
 module.exports = router;

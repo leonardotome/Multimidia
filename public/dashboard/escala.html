@@ -56,7 +56,7 @@
                     <p>Selecione qual culto irá servir:</p>
                     <select id="select_culto">
                         <option value="0">Selecione</option>
-                        <option value="Quarta-Feira">Quarta-Feira</option>
+                        <option value="Durante a semana">Durante a semana</option>
                         <option value="Sexta-Feira">Sexta-Feira</option>
                         <option value="Domingo - Manhã">Domingo - Manhã</option>
                         <option value="Domingo - Noite">Domingo - Noite</option>
@@ -76,6 +76,8 @@
     </div>
     <div id="cardErro"></div>
     <div id="divAguardar"></div>
+
+
 
 
 </body>
@@ -124,7 +126,7 @@
             if (resposta.ok) {
                 cardErro.style.display = "block";
                 alert("Escala cadastrada");
-                window.location.reload();   
+                window.location.reload();
 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -162,25 +164,33 @@
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
                     console.table(resposta);
-                    
+
                     for (var contador = 0; contador < resposta.length; contador++) {
                         let data = resposta[contador].Data.split('T')[0].split('-').reverse().join('/');
-                            // let data = resposta[contador].Data
-                            // console.log(data);
-                            // data = data.split('T')
-                            // console.log(data);
-                            // data = data[0].split('-')
-                            // console.log(data);
-                            // data = data.reverse();
-                            // console.log(data);
-                            // data = data.join('/');
-                            // console.log(data);
+                        // let data = resposta[contador].Data
+                        // console.log(data);
+                        // data = data.split('T')
+                        // console.log(data);
+                        // data = data[0].split('-')
+                        // console.log(data);
+                        // data = data.reverse();
+                        // console.log(data);
+                        // data = data.join('/');
+                        // console.log(data);
+
+
                         exibirEscala.innerHTML += `
-                        Data: ${data} 
-                        Culto: ${resposta[contador].Dia}
-                        Horario de chegada: ${resposta[contador].Chegada}
-                        Horário de início: ${resposta[contador].Inicio}
-                        <br>`;                        
+                        Data: ${data}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+                        Culto: ${resposta[contador].Dia}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        Horario de chegada: ${resposta[contador].Chegada}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                        Horário de início: ${resposta[contador].Inicio}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <span class="botoes">
+                        <button id="btn_presente${resposta[contador].idEscala}" class="btn_presenca" onclick="presenca(${resposta[contador].idEscala})">
+                            Presente
+                            </button>
+                        </span>
+                        <hr>    
+                        <br>`;
                     }
                 })
             } else {
@@ -193,6 +203,47 @@
 
         return false;
     }
+
+    function presenca(numero_botao) {
+        var idBotao = "btn_presente" + numero_botao;
+        var idEscala = numero_botao;
+        console.log(idBotao);
+        document.getElementById(idBotao).style.display = "none";
+
+        fetch("/usuarios/presenca", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idEscalaServer: idEscala,
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+                alert("Presença cadastrado");
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        function select_presenca() {
+
+        }
+
+        return false;
+    }
+
+
+
 
 
 </script>
