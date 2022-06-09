@@ -18,7 +18,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="exibir_escala(), validarSessao()"
+<body onload="exibir_escala()"
 
     <div class="header">
         <div class="container">
@@ -281,8 +281,8 @@
                     cardErro.style.display = "block";
                     modalPresenca.style.display = "block";
                     mensagem_modal_analise.innerHTML = `
-                    Você foi escalado para servir em <b>${resposta[0].quantidade}</b> cultos
-                    e esteve presente em <b>${resposta[1].quantidade}</b> cultos`;
+                    Você foi escalado para servir em <b>${resposta[0].quantidade}</b> culto(s)
+                    e esteve presente em <b>${resposta[1].quantidade}</b> culto(s)`;
 
                 })
             } else {

@@ -103,9 +103,10 @@ button {
   height: 80vh;
 }
 
-.alerta_erro {
+/* FORMULARIO */
+
+.alerta_erro{
   display: flex;
-  justify-content: flex-end;
 }
 
 .card_erro {
@@ -120,7 +121,7 @@ button {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro {
+.card_erro #mensagem_erro{
   font-weight: 500;
   font-size: 20px;
 }
