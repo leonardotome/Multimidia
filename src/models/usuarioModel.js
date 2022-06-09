@@ -49,7 +49,7 @@ function exibir(idUsuario) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    select idEscala, data_escala as Data, culto as Dia,
+    select idEscala, data_escala as Data, culto as Dia, Presenca,
     case
        when culto = 'Sexta-Feira' or culto = 'Durante a semana' then '19:00'
        when culto = 'Domingo - Noite' then '17:30'

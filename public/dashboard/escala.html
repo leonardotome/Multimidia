@@ -178,19 +178,31 @@
                         // data = data.join('/');
                         // console.log(data);
 
+                        if (resposta[contador].Presenca == 'Ausente') {
+                            exibirEscala.innerHTML += `
+                            Data: ${data}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+                            Culto: ${resposta[contador].Dia}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            Horario de chegada: ${resposta[contador].Chegada}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            Horário de início: ${resposta[contador].Inicio}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            <span class="botoes">
+                            <button id="btn_presente${resposta[contador].idEscala}" class="btn_presenca" onclick="presenca(${resposta[contador].idEscala})">
+                                Presente
+                                </button>
+                            </span>
+                            <hr>    
+                            <br>`;
+                            
+                        } else {
+                            exibirEscala.innerHTML += `
+                            Data: ${data}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+                            Culto: ${resposta[contador].Dia}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            Horario de chegada: ${resposta[contador].Chegada}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                            Horário de início: ${resposta[contador].Inicio}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            <hr>    
+                            <br>`;
+                        }
 
-                        exibirEscala.innerHTML += `
-                        Data: ${data}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
-                        Culto: ${resposta[contador].Dia}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-                        Horario de chegada: ${resposta[contador].Chegada}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-                        Horário de início: ${resposta[contador].Inicio}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                        <span class="botoes">
-                        <button id="btn_presente${resposta[contador].idEscala}" class="btn_presenca" onclick="presenca(${resposta[contador].idEscala})">
-                            Presente
-                            </button>
-                        </span>
-                        <hr>    
-                        <br>`;
+
                     }
                 })
             } else {
@@ -235,15 +247,7 @@
 
         });
 
-        function select_presenca() {
-
-        }
-
-        return false;
     }
-
-
-
 
 
 </script>
