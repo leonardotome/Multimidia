@@ -47,6 +47,22 @@ body {
   cursor: pointer;
 }
 
+/* FOOTER */
+
+.footer {
+  background-color: 
+  #184a98;
+  height: 70px;
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer .container {
+  justify-content: center;
+}
+
 .img {
   width: auto;
   max-height: 100%;
@@ -116,7 +132,7 @@ hr {
 }
 
 .servir {
-  background-color: #1B6BB3;
+  background-color: black;
   color: #fff;
   font-size: 50px;
   display: flex;
@@ -281,7 +297,7 @@ select {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #184a98;
   width: 120px;
   align-self: center;
   margin-top: 5px;

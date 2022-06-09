@@ -80,6 +80,22 @@ body {
   button {
     cursor: pointer;
   }
+
+  /* FOOTER */
+
+.footer {
+  background-color: 
+  #184a98;
+  height: 70px;
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer .container {
+  justify-content: center;
+}
   
   /* LOGIN */
 
