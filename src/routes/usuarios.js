@@ -37,7 +37,7 @@ router.post("/analise1", function (req, res) {
 });
 
 router.post("/analise2", function (req, res) {
-    usuarioController.analise1(req, res);
+    usuarioController.analise2(req, res);
 });
 
 module.exports = router;

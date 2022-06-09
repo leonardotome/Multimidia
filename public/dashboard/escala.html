@@ -302,7 +302,7 @@
                 resposta.json().then(function (resposta) {
                     console.table(resposta);
                     cardErro.style.display = "block";
-                    alert(`Você está escalado em ${resposta[0].} cultos`);
+                    alert(`Você esteve presente em ${resposta[0].Presente} cultos`);
                 })
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -310,7 +310,5 @@
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
-
-
     }
 </script>
