@@ -49,7 +49,7 @@
     <div class="banner">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
+                
             </div>
         </div>
         <div class="container">
@@ -68,7 +68,7 @@
 
 
                 </div>
-
+                <span id="mensagem_erro"></span>
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div>
@@ -102,8 +102,18 @@
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
+            // cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            // cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
             finalizarAguardar();
             return false;
         }
