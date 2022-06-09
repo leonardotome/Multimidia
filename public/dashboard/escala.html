@@ -253,6 +253,7 @@
 
     }
 
+    //Função para select de quantidade de escalas e quantas escalas o usuario esteve presente.
     function analise1() {
 
         var fkUsuarioVar = Number(sessionStorage.ID_USUARIO);
@@ -270,10 +271,13 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
-                alert(`Select qtd dias de escala`);
-                console.log(`Você está escalado em ${resposta[0].qtd_escala} cultos`);
+                resposta.json().then(function (resposta) {
+                    console.table(resposta);
+                    cardErro.style.display = "block";
+                    alert(`Select qtd dias de escala`);
+                    alert(`Você está escalado em ${resposta[0].qtd_escala} cultos`);
 
+                })
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }

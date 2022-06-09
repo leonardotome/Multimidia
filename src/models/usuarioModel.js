@@ -85,7 +85,7 @@ function analise1(fkUsuario) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    SELECT COUNT(idEscala) 'qtd_escala' FROM Escala WHERE fkUsuario = ${fkUsuario};
+    SELECT COUNT(idEscala) AS 'qtd_escala' FROM Escala WHERE fkUsuario = ${fkUsuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
