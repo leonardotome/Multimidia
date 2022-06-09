@@ -34,3 +34,9 @@ select culto as Dia,
     when culto = 'Domingo - Manhã' then '10:30'
     else 'Invalido' end Inicio
 from escala;
+
+SELECT * FROM escala;	
+select*from usuario;
+
+SELECT COUNT(Presenca) FROM Escala WHERE Presenca = 'Presente' AND fkUsuario = 1;
+SELECT COUNT(idEscala) AS 'qtd_escala' FROM Escala WHERE fkUsuario = 6;
