@@ -65,7 +65,7 @@
                     <button onclick="cadastrar()">
                         Cadastrar escala
                     </button>
-                    <button onclick="analise1()">
+                    <button onclick="analise()">
                         Análise de escalas
                     </button>
                 </div>
@@ -254,10 +254,11 @@
     }
 
     //Função para select de quantidade de escalas e quantas escalas o usuario esteve presente.
-    function analise1() {
+    function analise() {
 
         var fkUsuarioVar = Number(sessionStorage.ID_USUARIO);
 
+        //Analise 1
         fetch("/usuarios/analise1", {
             method: "POST",
             headers: {
@@ -275,7 +276,6 @@
                     console.table(resposta);
                     cardErro.style.display = "block";
                     alert(`Você está escalado em ${resposta[0].qtd_escala} cultos`);
-
                 })
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -285,10 +285,32 @@
         });
 
 
+        //Analise 2
+        fetch("/usuarios/analise2", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkUsuarioServer: fkUsuarioVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+                    console.table(resposta);
+                    cardErro.style.display = "block";
+                    alert(`Você está escalado em ${resposta[0].} cultos`);
+                })
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
 
     }
-
-
-
-
 </script>

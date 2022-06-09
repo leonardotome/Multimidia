@@ -36,4 +36,8 @@ router.post("/analise1", function (req, res) {
     usuarioController.analise1(req, res);
 });
 
+router.post("/analise2", function (req, res) {
+    usuarioController.analise1(req, res);
+});
+
 module.exports = router;
