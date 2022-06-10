@@ -18,21 +18,22 @@
         rel="stylesheet">
 </head>
 
-<body onload="exibir_escala()" <div class="header">
-    <div class="container">
-        <img class="logo" src="../assets/Midia/MultiMidia_Logo_org_W.png">
-        <ul class="navbar">
-            <li>
-                <a href="escala.html">Escala</a>
-            </li>
-            <li>
-                <a href="treinamentos.html">Treinamentos</a>
-            </li>
-            <li>
-                <p class="sair" onclick="limparSessao()">Sair</p>
-            </li>
-        </ul>
-    </div>
+<body onload="exibir_escala()">
+    <div class="header">
+        <div class="container">
+            <img class="logo" src="../assets/Midia/MultiMidia_Logo_org_W.png">
+            <ul class="navbar">
+                <li>
+                    <a href="escala.html">Escala</a>
+                </li>
+                <li>
+                    <a href="treinamentos.html">Treinamentos</a>
+                </li>
+                <li>
+                    <p class="sair" onclick="limparSessao()">Sair</p>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="banner_escala">
@@ -102,8 +103,7 @@
         var idUsuarioVar = Number(sessionStorage.ID_USUARIO);
 
         if (data_escalaVar == "" || cultoVar == 0) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert("Mensagem de erro para todos os campos em branco");
 
             finalizarAguardar();
             return false;
