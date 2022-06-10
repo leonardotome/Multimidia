@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    
+
 
     <div class="banner_escala">
         <div class="modal_analise">
@@ -105,7 +105,7 @@
         var idUsuarioVar = Number(sessionStorage.ID_USUARIO);
 
         if (data_escalaVar == "" || cultoVar == 0) {
-            alert("Mensagem de erro para todos os campos em branco");
+            alert("Preencha todos os campos para cadastrar a escala");
 
             finalizarAguardar();
             return false;
@@ -147,11 +147,8 @@
         });
 
         return false;
-    }
+    }   
 
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none"
-    // }
 
     function exibir_escala() {
         var idUsuarioVar = Number(sessionStorage.ID_USUARIO);
@@ -177,16 +174,6 @@
 
                     for (var contador = 0; contador < resposta.length; contador++) {
                         let data = resposta[contador].Data.split('T')[0].split('-').reverse().join('/');
-                        // let data = resposta[contador].Data
-                        // console.log(data);
-                        // data = data.split('T')
-                        // console.log(data);
-                        // data = data[0].split('-')
-                        // console.log(data);
-                        // data = data.reverse();
-                        // console.log(data);
-                        // data = data.join('/');
-                        // console.log(data);
 
                         if (resposta[contador].Presenca == 'Ausente') {
                             exibirEscala.innerHTML += `
